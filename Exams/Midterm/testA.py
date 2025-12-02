@@ -136,3 +136,25 @@ def func():
     x = x + 1
     print(x)
 # func()
+
+### Write a Python Function that determines whether a given number is prime. Ensure that it handles
+#.   all the possible exceptions appropriately.
+
+def is_prime(number):
+    try:
+        if not isinstance(number, int):
+            raise TypeError("Must be an integer")
+        if number < 2:
+            return False
+        for i in range(2, int(number ** 0.5) + 1):
+            if number % i == 0:
+                return False
+            return True
+    except TypeError as e:
+        return f"Error: {e}"
+    except Exception as e:
+        return f"Unexpected error has occured: {e}"
+    
+print(is_prime(7))
+print(is_prime(10))
+print(is_prime("True"))
