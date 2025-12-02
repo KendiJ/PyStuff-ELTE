@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 ![Python 3.10](https://img.shields.io/badge/Python-3.10%2B-blue)
 
-## 🗺️ Table of Contents
+## Table of Contents
 * [Course Overview](#course-overview)
 * [Repository Structure](#-repository-structure)
 * [Setup & Running the Code](#-setup--running-the-code)
