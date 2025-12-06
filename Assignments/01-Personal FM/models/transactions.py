@@ -30,4 +30,4 @@ class IncomeTransaction(Transactions):
 class ExpenseTransaction(Transactions):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.type = "espens"
+        self.type = "espense"
