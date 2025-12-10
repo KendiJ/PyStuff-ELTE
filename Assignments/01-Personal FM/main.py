@@ -54,6 +54,25 @@ class FinancialShell(cmd.Cmdmd):
         except FinanceError as e:
             print(f"Error {e}")
         
+    def do_list_account(self):
+        """List all accounts."""
+        accounts = self.acc_manager.list_accounts()
+        if not accounts:
+            print ("No accounts found")
+            return
+        print(f"{'ID':<5} {'Name':<20} {'Type':<10} {'Info':<20}")
+        print("-" * 60)
+        for acc in accounts:
+            info = acc.bank_name if hasattr(acc, 'bank_name') else acc.currency
+            print(f"{acc.id:<5} {acc.name:<20} {acc.type:<10} {info:<20}")
 
-
-
+    def do_delete_account(self, arg):
+        """Delete an account. Usage: delete_account <id>"""
+        if not arg:
+            print("Error: Missing ID")
+            return
+        try:
+            self.acc_manager.delete_account(arg)
+            print(f"Account {arg} deleted")
+        except FinanceError as e:
+            print(f"Error {e}")
